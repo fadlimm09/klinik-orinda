@@ -12,6 +12,21 @@ import JadwalDokter from "./JadwalDokter";
 function CardCategory() {
   const [cards, setCard] = useState([]);
 
+  const DataCategory = [
+    {
+      "category": "Poli Umum",
+      "image": "https://i.ibb.co/gRBQj13/Group-237579-1.png",
+      "name": "Poli Umum",
+      "id": "1"
+    },
+    {
+      "category": "Poli Gigi",
+      "image": "https://i.ibb.co/6m8qf6D/Group-237582-1.png",
+      "name": "Poli Gigi",
+      "id": "3"
+    }
+  ]
+
   useEffect(() => {
     AOS.init();
     AOS.refresh();
@@ -33,7 +48,7 @@ function CardCategory() {
 
   return (
     <>
-      {cards.map((item) => (
+      {DataCategory.map((item) => (
         <Col
           md={3}
           key={item.id}
@@ -61,9 +76,9 @@ function CardCategory() {
         </Col>
       ))}
 
-      <div>
+      {/* <div>
         <JadwalDokter />
-      </div>
+      </div> */}
     </>
   );
 }

@@ -1,4 +1,4 @@
-import carevulLogo from "../assets/carevul-logo.svg";
+import carevulLogo from "../assets/orinda-logo.png";
 import "../styles/footer.css";
 import { Link } from "react-router-dom";
 import fb from "../assets/icon/Facebook.svg";
@@ -20,7 +20,7 @@ const footer = () => {
                   Kamu lagi sakit?
                   <span className="text-carevul fw-bolder">
                     {" "}
-                    Klinik Daarusyifa
+                    Klinik Orinda
                   </span>{" "}
                   {/* <span className="text-carevul fw-bolder"> Carevul </span> */}
                   solusinya, tanpa antri, tanpa ribet, konsulin aja!
@@ -71,7 +71,7 @@ const footer = () => {
           <hr />
           <div className="d-flex justify-content-center align-items-center ">
             <div className="d-flex justify-content-center align-items-center ">
-              Copyright © 2023 Klinik Daarusyifa
+              Copyright © 2023 Klinik Orinda
             </div>
           </div>
         </div>

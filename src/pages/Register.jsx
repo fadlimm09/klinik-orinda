@@ -20,9 +20,7 @@ function Register() {
       return Swal.fire("Error", "Mohon lengkapi semua kolom", "error");
     }
 
-    let res = await axios.get(
-      "https://64e224b4ab0037358818bf67.mockapi.io/users"
-    );
+    let res = await axios.get("https://64e224b4ab0037358818bf67.mockapi.io/users");
     let data = await res.data;
 
     const ambilData = async () => {
@@ -41,15 +39,10 @@ function Register() {
             name: name,
             email: email,
             password: password,
-            image:
-              "https://img.icons8.com/?size=512&id=tZuAOUGm9AuS&format=png",
+            image: "https://img.icons8.com/?size=512&id=tZuAOUGm9AuS&format=png",
           })
           .then((result) => {
-            Swal.fire(
-              "Success!",
-              "your account has been successfully created.",
-              "success"
-            ).then((result) => {
+            Swal.fire("Success!", "your account has been successfully created.", "success").then((result) => {
               if (result.isConfirmed) {
                 navigate("/login");
               }
@@ -68,56 +61,29 @@ function Register() {
   return (
     <div>
       <section className="login d-flex">
-        <div
-          className="login-left h-100"
-          data-aos="fade-right"
-          data-aos-duration="1000"
-        >
+        <div className="login-left h-100" data-aos="fade-right" data-aos-duration="1000">
           <div className="row justify-content-center align-items-center h-100">
             <div className="col-7">
               <div className="header">
                 <h1>Daftar dulu yuk</h1>
-                <p>
-                  Gratis konsultasi di Klinik Daarusyifa dimanapun dan kapanpun
-                </p>
+                <p>konsultasi di Klinik Orinda dimanapun dan kapanpun</p>
               </div>
               <div className="login-form">
                 <form id="form-register" onSubmit={handleRegister}>
                   <label htmlFor="name" className="form-label">
                     Nama
                   </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="Masukkan Nama"
-                  />
+                  <input type="text" className="form-control" id="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="Masukkan Nama" />
 
                   <label htmlFor="email" className="form-label mrgn-1">
                     Email
                   </label>
-                  <input
-                    type="email"
-                    className="form-control"
-                    id="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Masukkan Email"
-                  />
+                  <input type="email" className="form-control" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Masukkan Email" />
 
                   <label htmlFor="password" className="form-label mrgn-1">
                     Password
                   </label>
-                  <input
-                    type="password"
-                    className="form-control"
-                    id="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    placeholder="Masukkan Password"
-                  />
+                  <input type="password" className="form-control" id="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Masukkan Password" />
 
                   <button className="btn-regis" type="submit">
                     Daftar

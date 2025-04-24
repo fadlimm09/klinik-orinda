@@ -25,9 +25,7 @@ function Login() {
       return Swal.fire("Error", "Email dan password harus diisi", "error");
     }
 
-    let res = await axios.get(
-      "https://64e224b4ab0037358818bf67.mockapi.io/users"
-    );
+    let res = await axios.get("https://64e224b4ab0037358818bf67.mockapi.io/users");
     let data = await res.data;
 
     const ambilData = () => {
@@ -63,74 +61,32 @@ function Login() {
             <div className="col-7">
               <div className="header">
                 <h1 data-aos="fade-right" data-aos-duration="1000">
-                  Hallo, Syifa's Friends
+                  Hallo, Orin's Friends
                 </h1>
                 <p data-aos="fade-right" data-aos-duration="1000">
-                  Login dulu yuk sebelum kamu mengakses platform klinik
-                  Daarusyifa
+                  Login dulu yuk sebelum kamu mengakses platform klinik Orinda
                 </p>
               </div>
               <div className="login-form">
                 <form id="form-login" onSubmit={handleLogin}>
-                  <label
-                    htmlFor="email"
-                    className="form-label"
-                    data-aos="fade-right"
-                    data-aos-duration="1000"
-                  >
+                  <label htmlFor="email" className="form-label" data-aos="fade-right" data-aos-duration="1000">
                     Email
                   </label>
-                  <input
-                    data-aos="fade-right"
-                    data-aos-duration="1000"
-                    type="email"
-                    className="form-control"
-                    id="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Masukkan Email"
-                  />
+                  <input data-aos="fade-right" data-aos-duration="1000" type="email" className="form-control" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Masukkan Email" />
 
-                  <label
-                    htmlFor="password"
-                    className="form-label mrgn-1"
-                    data-aos="fade-right"
-                    data-aos-duration="1000"
-                  >
+                  <label htmlFor="password" className="form-label mrgn-1" data-aos="fade-right" data-aos-duration="1000">
                     Password
                   </label>
-                  <input
-                    data-aos="fade-right"
-                    data-aos-duration="1000"
-                    type="password"
-                    className="form-control"
-                    id="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    placeholder="Masukkan Password"
-                  />
+                  <input data-aos="fade-right" data-aos-duration="1000" type="password" className="form-control" id="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Masukkan Password" />
 
-                  <button
-                    className="btn-2"
-                    type="submit"
-                    data-aos="fade-right"
-                    data-aos-duration="1000"
-                  >
+                  <button className="btn-2" type="submit" data-aos="fade-right" data-aos-duration="1000">
                     Login
                   </button>
                 </form>
-                <p
-                  className="fsize-15 d-block text-center"
-                  data-aos="fade-right"
-                  data-aos-duration="1000"
-                >
+                <p className="fsize-15 d-block text-center" data-aos="fade-right" data-aos-duration="1000">
                   Kamu belum punya akun?
                   <Link to={"/regis"} style={{ textDecoration: "none" }}>
-                    <span
-                      className="regis"
-                      data-aos="fade-right"
-                      data-aos-duration="1000"
-                    >
+                    <span className="regis" data-aos="fade-right" data-aos-duration="1000">
                       Daftar Disini
                     </span>
                   </Link>

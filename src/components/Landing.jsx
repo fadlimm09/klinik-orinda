@@ -33,7 +33,7 @@ const Landing = () => {
             <h1>
               Selamat Datang
               <br />
-              di Daarusyifa !
+              di Orinda !
             </h1>
             <p className="text-white my-4">
               Klinik Pratama dengan Pelayanan Paripurna di Kecamatan Cipayung,
@@ -58,7 +58,7 @@ const Landing = () => {
         <div className="">
           <h1 className="a-text d-flex mt-5">Tata Nilai AHWAN</h1>
           <h5 className="text-center mb-5 mx-3">
-            Semua Staff klinik pratama Daarusyifa telah berikrar untuk
+            Semua Staff klinik pratama Orinda telah berikrar untuk
             memberikan pelayanan <br></br>kesehatan masyarakat dengan tata Nilai
             yaitu AHWAN :
           </h5>
@@ -156,17 +156,17 @@ const Landing = () => {
             <div className="card-introduction d-flex align-center justify-center">
               <img src={Pict2} className="Character2" alt="" />
               <div className="desc">
-                <h2>Visi Klinik Pratama Daarussyifa </h2>
+                <h2>Visi Klinik Pratama Orinda </h2>
                 <h5>
                   Menjadi Klinik Pratama dengan Pelayanan Paripurna di Kecamatan
                   Cipayung Jakarta Timur 2023
                 </h5>
                 <p>
-                  Untuk mencapai visi tersebut, Klinik Pratama Daarussyifa
+                  Untuk mencapai visi tersebut, Klinik Pratama Orinda
                   menjalankan beberapa MISI KESEHATAN berupa Meningkatkan
                   kompetensi pegawai di berbagai bidang Melakukan pelayanan
                   dengan profesional Melengkapi Sarana dan Prasarana Klinik
-                  Pratama Daarussyifa
+                  Pratama Orinda
                 </p>
               </div>
             </div>

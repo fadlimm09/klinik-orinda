@@ -1,7 +1,7 @@
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { NavLink, Navigate, useNavigate } from "react-router-dom";
-import CarevulLogo from "../assets/carevul-logo.svg";
+import CarevulLogo from "../assets/orinda-logo.png";  
 import "./../styles/Navbar.css";
 import { Container, Button, Dropdown } from "react-bootstrap";
 import DropdownMenu from "react-bootstrap/esm/DropdownMenu";
@@ -25,12 +25,8 @@ function BasicExample() {
             <Dropdown.Toggle id="dropdown-basic">Account&nbsp;</Dropdown.Toggle>
 
             <Dropdown.Menu>
-              <div className="text-center mx-4">
-                <img
-                  height={50}
-                  className="text-center justify-center"
-                  src={isLoggedIn.img}
-                />
+              <div className="text-center ">
+                <img height={50} className="text-center justify-center" src={isLoggedIn.img} />
 
                 <h5 className="ms-auto text-center">{isLoggedIn.name}</h5>
                 <p>{isLoggedIn.email}</p>
@@ -52,16 +48,10 @@ function BasicExample() {
     component = (
       <>
         <div className="text-center ">
-          <NavLink
-            to={"/login"}
-            className="logindong btn text-carevul border-carevul m-1"
-          >
+          <NavLink to={"/login"} className="logindong btn text-carevul border-carevul m-1">
             Login
           </NavLink>
-          <NavLink
-            to={"/regis"}
-            className="btn color-carevul-gradient text-white m-1"
-          >
+          <NavLink to={"/regis"} className="btn color-carevul-gradient text-white m-1">
             Register
           </NavLink>
         </div>
@@ -75,7 +65,7 @@ function BasicExample() {
         <Navbar.Brand href="#">
           {" "}
           <div className="logoApp" onClick={() => navigate("/")}>
-            <img width={60} src={CarevulLogo} alt="Carevul Logo" />{" "}
+            <img width={100} src={CarevulLogo} alt="Carevul Logo" />{" "}
           </div>{" "}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
