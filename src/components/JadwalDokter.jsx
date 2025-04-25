@@ -10,8 +10,8 @@ export default function JadwalDokter() {
         <Accordion>
           <Accordion.Item eventKey="0">
             <Accordion.Header>Poli Umum</Accordion.Header>
-            <Accordion.Header> 1. Dr. H. Agah Nugraha, M.k.M</Accordion.Header>
-            <Accordion.Header>2. Dr. Hj. Dessy Susanti, M.K.M</Accordion.Header>
+            <Accordion.Header> Dr. H. Agah Nugraha, M.k.M</Accordion.Header>
+            <Accordion.Header> Dr. Hj. Dessy Susanti, M.K.M</Accordion.Header>
             <Accordion.Body>
               <p>
                 <strong>Senin s/d Jumat</strong>
