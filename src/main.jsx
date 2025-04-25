@@ -2,12 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
-import {
-  Route,
-  RouterProvider,
-  createBrowserRouter,
-  createRoutesFromElements,
-} from "react-router-dom";
+import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
 import ErrorPage from "./pages/ErrorPage.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -31,6 +26,7 @@ import BookingStatus from "./components/BookingStatus.jsx";
 
 // import Admin roles
 import AdminPage from "./pages/AdminPage.jsx";
+import JadwalDokter from "./components/JadwalDokter.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -42,19 +38,14 @@ const router = createBrowserRouter(
 
         {/* Di bawah sini bisa di taroh tiap halaman yang kalian buat Contohnya :  */}
         <Route path="/paymentdoctor/" element={<PaymentPage />} />
-        <Route
-          path="/paymentdoctor/bookingstatus"
-          element={<BookingStatus />}
-        />
+        <Route path="/paymentdoctor/bookingstatus" element={<BookingStatus />} />
 
         <Route path="/consult" element={<Consult />}>
           <Route path="/consult/category" element={<CategoryDoctor />} />
-          <Route
-            path="/consult/paymentdoctor/bookingstatus"
-            element={<BookingStatus />}
-          />
+          <Route path="/consult/paymentdoctor/bookingstatus" element={<BookingStatus />} />
         </Route>
         <Route path="/admin" element={<AdminPage />} />
+        <Route path="/jadwaldokter" element={<JadwalDokter />} />
       </Route>
 
       <Route path="/login" element={<Login />} />

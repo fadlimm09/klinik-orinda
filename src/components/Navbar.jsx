@@ -1,7 +1,7 @@
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { NavLink, Navigate, useNavigate } from "react-router-dom";
-import CarevulLogo from "../assets/orinda-logo.png";  
+import CarevulLogo from "../assets/orinda-logo.png";
 import "./../styles/Navbar.css";
 import { Container, Button, Dropdown } from "react-bootstrap";
 import DropdownMenu from "react-bootstrap/esm/DropdownMenu";
@@ -76,6 +76,9 @@ function BasicExample() {
             </NavLink>
             <NavLink to={"/consult/category"} className="nav-link">
               Konsultasi
+            </NavLink>
+            <NavLink to={"/jadwaldokter"} className="nav-link">
+              Jadwal Dokter
             </NavLink>
           </Nav>
           <Nav className="ms-auto gap-1">{component}</Nav>
