@@ -22,7 +22,6 @@ import PaymentPage from "./pages/PaymentPage";
 
 import Consult from "./pages/Consult";
 
-import BookingProvider from "./context/bookingContext";
 import BookingStatus from "./components/BookingStatus.jsx";
 
 // import Admin roles
@@ -33,7 +32,6 @@ import DisplayBook from "./components/DisplayBook.jsx";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-
       <Route path="/" element={<Layout />} errorElement={<ErrorPage />}>
         <Route path="/" element={<Landing />} />
         <Route path="/paymentdoctor/" element={<PaymentPage />} />
@@ -53,11 +51,7 @@ const router = createBrowserRouter(
 );
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  // <React.StrictMode>
-  <BookingProvider>
-    <QueryClientProvider client={new QueryClient()}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>
-  </BookingProvider>
-  // </React.StrictMode>
+  <QueryClientProvider client={new QueryClient()}>
+    <RouterProvider router={router} />
+  </QueryClientProvider>
 );

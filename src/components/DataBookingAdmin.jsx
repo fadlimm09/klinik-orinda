@@ -2,6 +2,7 @@ import { Card, Container, Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { QueryClient } from "@tanstack/react-query";
 
 function DataBookingAdmin() {
   const [dataBooking, setDataBooking] = useState([]);
@@ -25,9 +26,8 @@ function DataBookingAdmin() {
     try {
       for (const item of dataBooking) {
         await axios
-          .delete(
-            `https://64de412c825d19d9bfb25d14.mockapi.io/bookingPasien/${item.nomer_antrian}`
-          )
+          .delete(`https://64de412c825d19d9bfb25d14.mockapi.io/bookingPasien/${item.nomer_antrian}`)
+
           .then((response) => {
             console.log(`Deleted item with id ${item.nomer_antrian}`);
           });
@@ -44,15 +44,10 @@ function DataBookingAdmin() {
 
   const handleDeleteByKey = async (key, userName) => {
     try {
-      await axios.delete(
-        `https://64de412c825d19d9bfb25d14.mockapi.io/bookingPasien/${key}`
-      );
-      Swal.fire(
-        `Pasien ke ${key} yang bernama ${userName} sudah selesai konsultasi`,
-        "",
-        "success"
-      );
+      await axios.delete(`https://64de412c825d19d9bfb25d14.mockapi.io/bookingPasien/${key}`);
+      Swal.fire(`Pasien ke ${key} yang bernama ${userName} sudah selesai konsultasi`, "", "success");
       fetchData();
+      QueryClient.invalidateQueries({ queryKey: ["book"] });
     } catch (error) {
       console.error(`Error deleting data with key ${key}:`, error);
     }
@@ -80,13 +75,7 @@ function DataBookingAdmin() {
               month: "long",
               day: "numeric",
             })}`}</h4>
-            <Button
-              onClick={() =>
-                handleDeleteByKey(item.nomer_antrian, item.user_name)
-              }
-            >
-              Delete Data
-            </Button>
+            <Button onClick={() => handleDeleteByKey(item.nomer_antrian, item.user_name)}>Delete Data</Button>
           </Card>
         ))}
       </div>

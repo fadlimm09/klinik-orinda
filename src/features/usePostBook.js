@@ -1,15 +1,13 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 
-
-export const useCreateMenu = () => {
+const useCreateBook = () => {
   const queryClient = useQueryClient();
 
   const mutation = useMutation({
-    mutationFn: async ()=> {
+    mutationFn: async () => {
       const response = await axios.post("https://64de412c825d19d9bfb25d14.mockapi.io/bookingPasien", json);
       return await response.data;
-      
     },
     onSuccess: () => {
       console.log("success book");
@@ -23,3 +21,5 @@ export const useCreateMenu = () => {
 
   return mutation;
 };
+
+export default useCreateBook;

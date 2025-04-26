@@ -1,10 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
-export const useGetBook = () => {
+const useGetBook = () => {
   const queryClient = useQuery({
-    enabled: !!id,
-    queryKey: ["menu"],
+    queryKey: ["book"],
     queryFn: async () => {
       const response = await axios.get(`https://64de412c825d19d9bfb25d14.mockapi.io/bookingPasien`);
       if (!response.data) {
@@ -16,3 +15,5 @@ export const useGetBook = () => {
 
   return queryClient;
 };
+
+export default useGetBook;

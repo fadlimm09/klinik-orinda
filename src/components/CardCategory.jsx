@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
-import JadwalDokter from "./JadwalDokter";
+
 
 function CardCategory() {
   const [cards, setCard] = useState([]);
@@ -76,9 +76,7 @@ function CardCategory() {
         </Col>
       ))}
 
-      {/* <div>
-        <JadwalDokter />
-      </div> */}
+    
     </>
   );
 }

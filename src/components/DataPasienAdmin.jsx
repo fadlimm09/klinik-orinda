@@ -2,6 +2,7 @@ import { Card, Container } from "react-bootstrap";
 import "./../styles/category-doctor.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
 
 function DataBookingAdmin() {
   const [dataBooking, setDataBooking] = useState([]);
