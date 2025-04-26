@@ -37,7 +37,7 @@ export default function JadwalDokter() {
 
             <Accordion.Body>
               <p>
-                <strong>Drg. Ono Sumarno</strong>
+                <strong>drg. Ono Sumarno</strong>
               </p>
               <p>
                 <strong>Senin s/d Jumat</strong>
