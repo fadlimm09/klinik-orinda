@@ -10,9 +10,15 @@ export default function JadwalDokter() {
         <Accordion>
           <Accordion.Item eventKey="0">
             <Accordion.Header>Poli Umum</Accordion.Header>
-            <Accordion.Header> Dr. H. Agah Nugraha, M.k.M</Accordion.Header>
-            <Accordion.Header> Dr. Hj. Dessy Susanti, M.K.M</Accordion.Header>
+
             <Accordion.Body>
+              <p>
+                {" "}
+                <strong> dr. H. Agah Nugraha, M.k.M</strong>
+                <p>
+                  <strong> dr. Hj. Dessy Susanti, M.K.M</strong>
+                </p>
+              </p>
               <p>
                 <strong>Senin s/d Jumat</strong>
               </p>
@@ -28,8 +34,11 @@ export default function JadwalDokter() {
 
           <Accordion.Item eventKey="1">
             <Accordion.Header>Poli Gigi</Accordion.Header>
-            <Accordion.Header>Drg. Ono Sumarno</Accordion.Header>
+
             <Accordion.Body>
+              <p>
+                <strong>Drg. Ono Sumarno</strong>
+              </p>
               <p>
                 <strong>Senin s/d Jumat</strong>
               </p>

@@ -18,27 +18,26 @@ const footer = () => {
               <div className="text-gray  mb-4">
                 <p>
                   Kamu lagi sakit?
-                  <span className="text-carevul fw-bolder">
-                    {" "}
-                    Klinik Orinda
-                  </span>{" "}
-                  {/* <span className="text-carevul fw-bolder"> Carevul </span> */}
+                  <span className="text-carevul fw-bolder"> Klinik Orinda</span> {/* <span className="text-carevul fw-bolder"> Carevul </span> */}
                   solusinya, tanpa antri, tanpa ribet, konsulin aja!
                 </p>
               </div>
 
               <div className=" social-media d-flex justify-content-between mb-5">
                 <img src={fb} alt="" />
-                <img src={ins} alt="" />
+                <div>
+                  {" "}
+                  <a href="https://www.instagram.com/klinik_orinda?igsh=b3ptejl5OHV6Ym83" target="_blank" rel="noopener noreferrer">
+                    <img src={ins} alt="" />
+                  </a>
+                </div>
+
                 <img src={twi} alt="" />
                 <img src={lin} alt="" />
                 <img src={yt} alt="" />
               </div>
             </div>
 
-            <div className="col-lg-2 my-3 mb-md-2 ">
-              <div className="list-footer flex-column d-flex justify-content-around"></div>
-            </div>
             <div className="col-lg-2 my-3 mb-md-2 ">
               <div className="list-footer ">
                 <div className="d-flex flex-column  gap-2 ">
@@ -49,7 +48,7 @@ const footer = () => {
                   <Link to="" className="fw-normal  text-gray">
                     Kebijakan Privasi
                   </Link>
-                  <Link to="" className="fw-normal  text-gray">
+                  <Link to="https://api.whatsapp.com/send?phone=6282130862183&text=Halo%2C%20Apakah%20klinik%20buka%20%3F" className="fw-normal  text-gray">
                     Contact Us
                   </Link>
                 </div>
@@ -62,17 +61,15 @@ const footer = () => {
 
                   <span className="fw-normal">pratamadsf@gmail.com</span>
 
-                  <span>Jl. Monumen Pancasila Sakti No.45, Jaktim</span>
-                  <span>0818-0483-1774</span>
+                  <span>Klinik Pratama Orinda Alamat klinik: Jl. Raya Kuningan - Ciamis Dusun Kliwon RT. 006/ RW. 004 Desa Kadugede Kec. Kadugede Kab. Kuningan Jawa Barat Kode Pos 45561</span>
+                  <span>0821-3086-2183</span>
                 </div>
               </div>
             </div>
           </div>
           <hr />
           <div className="d-flex justify-content-center align-items-center ">
-            <div className="d-flex justify-content-center align-items-center ">
-              Copyright © 2023 Klinik Orinda
-            </div>
+            <div className="d-flex justify-content-center align-items-center ">Copyright © 2023 Klinik Orinda</div>
           </div>
         </div>
       </div>

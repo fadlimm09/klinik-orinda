@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "./index.css";
 
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
@@ -27,29 +28,26 @@ import BookingStatus from "./components/BookingStatus.jsx";
 // import Admin roles
 import AdminPage from "./pages/AdminPage.jsx";
 import JadwalDokter from "./components/JadwalDokter.jsx";
+import DisplayBook from "./components/DisplayBook.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      {/* Ini Layout biar tetep ada di semua halaman. Misalnya Navbar, Footer Bisa di taroh sini */}
 
       <Route path="/" element={<Layout />} errorElement={<ErrorPage />}>
         <Route path="/" element={<Landing />} />
-
-        {/* Di bawah sini bisa di taroh tiap halaman yang kalian buat Contohnya :  */}
         <Route path="/paymentdoctor/" element={<PaymentPage />} />
         <Route path="/paymentdoctor/bookingstatus" element={<BookingStatus />} />
-
         <Route path="/consult" element={<Consult />}>
           <Route path="/consult/category" element={<CategoryDoctor />} />
           <Route path="/consult/paymentdoctor/bookingstatus" element={<BookingStatus />} />
         </Route>
         <Route path="/admin" element={<AdminPage />} />
         <Route path="/jadwaldokter" element={<JadwalDokter />} />
+        <Route path="/display" element={<DisplayBook />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/regis" element={<Register />} />
       </Route>
-
-      <Route path="/login" element={<Login />} />
-      <Route path="/regis" element={<Register />} />
     </>
   )
 );
@@ -57,8 +55,9 @@ const router = createBrowserRouter(
 ReactDOM.createRoot(document.getElementById("root")).render(
   // <React.StrictMode>
   <BookingProvider>
-    {/* Semua Router yang kita buat di atas,  nanti bakalan di load di Router Provider di bawah ini */}
-    <RouterProvider router={router} />
+    <QueryClientProvider client={new QueryClient()}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
   </BookingProvider>
   // </React.StrictMode>
 );

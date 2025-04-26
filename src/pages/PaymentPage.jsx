@@ -36,7 +36,6 @@ const PaymentPage = () => {
       const selectedCategory = JSON.parse(Category).name;
 
       const myuuid = uuidv4();
-      console.log(`uuid anda adalah : ${myuuid}`);
       setUuid(myuuid);
 
       // Send data to mock API
