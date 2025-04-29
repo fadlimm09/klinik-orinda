@@ -1,0 +1,76 @@
+/* ========= Initial CSS  ============ */
+h2 {
+  font-size: 45px;
+  font-weight: bold;
+  color: #1e154f;
+}
+
+h3 {
+  font-size: 37px;
+  font-weight: bold;
+  color: #1e154f;
+}
+
+h4 {
+  font-weight: bold;
+  font-size: 25px;
+  color: #1e154f;
+}
+
+h5 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1e154f;
+}
+
+p {
+  font-weight: normal;
+  font-size: 15px;
+  color: #3f4344;
+  line-height: 15px;
+}
+
+#col-card {
+  margin-bottom: 20px;
+}
+
+#card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#card-category-image {
+  width: auto;
+  height: 320px;
+  /* Adjust height as needed */
+}
+
+/* responsive mobile */
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 25px;
+  }
+
+  h4 {
+    font-size: 20px;
+  }
+
+  h5 {
+    font-size: 15px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  #card-category-image {
+    height: auto;
+  }
+}

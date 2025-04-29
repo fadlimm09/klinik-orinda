@@ -1,0 +1,39 @@
+.text-carevul {
+  color: rgba(0, 175, 81, 1) !important;
+}
+
+.border-carevul {
+  border: 1px solid #3655d5 !important;
+}
+
+.color-carevul-gradient {
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 174, 83, 1),
+    rgba(0, 122, 85, 1)
+  );
+
+  /* transition-delay: 900s; */
+
+  transition: 100;
+}
+
+.color-carevul-gradient:hover {
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 174, 83, 1),
+    rgba(0, 122, 85, 1)
+  );
+
+  /* border: 6px solid #3655D5; */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9);
+  /* height: 100px; */
+}
+
+.banner-landing {
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 174, 83, 1),
+    rgba(0, 122, 85, 1)
+  );
+}
