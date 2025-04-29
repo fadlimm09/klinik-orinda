@@ -1,19 +1,16 @@
-import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
+import { NextResponse } from "next/server";
 
-export async function POST(req: NextRequest) {
+export async function POST(req: Request, res: Response) {
   try {
-    const { senderId, receiverId, content } = await req.json();
-
-    const message = await prisma.message.create({
-      data: {
-        content,
-        senderId,
-        receiverId,
+    const { senderId } = await req.json();
+    const message = await prisma.message.findMany({
+      where: {
+        senderId: senderId,
       },
     });
 
-    return NextResponse.json(message, { status: 201 });
+    return NextResponse.json(message);
   } catch (error) {
     console.error("Error sending message:", error);
     return NextResponse.json({ error: "Failed to send message" }, { status: 500 });
