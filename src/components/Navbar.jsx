@@ -1,19 +1,34 @@
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { NavLink, Navigate, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import CarevulLogo from "../assets/orinda-logo.png";
 import "./../styles/Navbar.css";
 import { Container, Button, Dropdown } from "react-bootstrap";
-import DropdownMenu from "react-bootstrap/esm/DropdownMenu";
+import Swal from "sweetalert2";
 
 function BasicExample() {
   const isLoggedIn = JSON.parse(localStorage.getItem("idUser")); // // true or false
-
   const navigate = useNavigate();
 
   const handleLogout = () => {
     localStorage.removeItem("idUser");
     window.location.reload();
+  };
+
+  const handleChat = () => {
+    if (isLoggedIn) {
+      window.open(`https://klinik-orinda-chat-layering.vercel.app/${isLoggedIn.name}`, "_blank");
+    } else {
+      Swal.fire(
+        {
+          icon: "error",
+          title: "Oops...",
+          text: "You need to login first!",
+          showConfirmButton: true,
+        },
+        () => navigate("/login")
+      );
+    }
   };
 
   let component = "";
@@ -31,11 +46,7 @@ function BasicExample() {
                 <h5 className="ms-auto text-center">{isLoggedIn.name}</h5>
                 <p>{isLoggedIn.email}</p>
 
-                <Button
-                  onClick={handleLogout}
-                  // onClick={window.localStorage.clear()}
-                  className="logindong text-white text-carevul border-carevul py-2"
-                >
+                <Button onClick={handleLogout} className="logindong text-white text-carevul border-carevul py-2">
                   Logout
                 </Button>
               </div>
@@ -80,8 +91,8 @@ function BasicExample() {
             <NavLink to={"/jadwaldokter"} className="nav-link">
               Jadwal Dokter
             </NavLink>
-            <NavLink to={"/konsultasi"} className="nav-link">
-              Konsultasi
+            <NavLink onClick={handleChat} className="nav-link">
+              Chat Dokter
             </NavLink>
           </Nav>
           <Nav className="ms-auto gap-1">{component}</Nav>
