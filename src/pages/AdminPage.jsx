@@ -17,22 +17,14 @@ function AdminPage() {
     <Container>
       <div>
         <h2>Admin Page</h2>
-        <p>
-          Halaman ini adalah halaman admin. Disini admin bisa melakukan
-          penghapusan, dan perubahan data.
-        </p>
+        <p>Halaman ini adalah halaman admin. Disini admin bisa melakukan penghapusan, dan perubahan data.</p>
         <div className="d-flex gap-3">
-          <Button onClick={() => handleButtonClick("DataBooking")}>
-            Data Booking
-          </Button>
+          <Button onClick={() => handleButtonClick("DataBooking")}>Data Booking</Button>
 
-          <Button onClick={() => handleButtonClick("KategoriDokter")}>
-            Data Kategori
-          </Button>
+          <Button onClick={() => handleButtonClick("KategoriDokter")}>Data Kategori</Button>
 
-          <Button onClick={() => handleButtonClick("DataPasien")}>
-            Data Pasien
-          </Button>
+          <Button onClick={() => handleButtonClick("DataPasien")}>Data Pasien</Button>
+          <Button href="https://klinik-orinda-chat-layering.vercel.app/chatdoctor">Chat Admin</Button>
         </div>
         <div>
           {selectedComponent === "DataBooking" && <DataBookingAdmin />}
