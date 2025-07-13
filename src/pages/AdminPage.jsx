@@ -3,7 +3,6 @@ import "./../styles/category-doctor.css";
 import { useState } from "react";
 
 import DataBookingAdmin from "../components/DataBookingAdmin";
-import KategoriDokterAdmin from "../components/KategoriDokterAdmin";
 import DataPasienAdmin from "../components/DataPasienAdmin";
 
 function AdminPage() {
@@ -26,14 +25,13 @@ function AdminPage() {
         <div className="d-flex gap-3">
           <Button onClick={() => handleButtonClick("DataBooking")}>Data Booking</Button>
 
-          <Button onClick={() => handleButtonClick("KategoriDokter")}>Data Kategori</Button>
-
+         
           <Button onClick={() => handleButtonClick("DataPasien")}>Data Pasien</Button>
         </div>
 
         <div>
           {selectedComponent === "DataBooking" && <DataBookingAdmin />}
-          {selectedComponent === "KategoriDokter" && <KategoriDokterAdmin />}
+  
           {selectedComponent === "DataPasien" && <DataPasienAdmin />}
         </div>
       </div>
