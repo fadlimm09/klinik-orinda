@@ -1,31 +1,31 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Accordion, Card } from "react-bootstrap";
-import { Col, Container, Row, Button } from "react-bootstrap";
+import { Card, Col } from "react-bootstrap";
 import "./../styles/category-doctor.css";
 import { Link } from "react-router-dom";
+import dokterUmum from "../../public/dokterumum.png";
+import dokterGigi from "../../public/doktergigi.png";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
-
 
 function CardCategory() {
   const [cards, setCard] = useState([]);
 
   const DataCategory = [
     {
-      "category": "Poli Umum",
-      "image": "https://i.ibb.co/gRBQj13/Group-237579-1.png",
-      "name": "Poli Umum",
-      "id": "1"
+      category: "Poli Umum",
+      image: dokterUmum, // ❌ Salah: jangan pakai ${...} di sini
+      name: "Poli Umum",
+      id: "1",
     },
     {
-      "category": "Poli Gigi",
-      "image": "https://i.ibb.co/6m8qf6D/Group-237582-1.png",
-      "name": "Poli Gigi",
-      "id": "3"
-    }
-  ]
+      category: "Poli Gigi",
+      image: dokterGigi,
+      name: "Poli Gigi",
+      id: "3",
+    },
+  ];
 
   useEffect(() => {
     AOS.init();
@@ -33,17 +33,13 @@ function CardCategory() {
   }, []);
 
   useEffect(() => {
-    axios("https://686fbba191e85fac42a24ef2.mockapi.io/BookingPasien/Booking_pasien").then(
-      (result) => setCard(result.data)
+    axios("https://64de412c825d19d9bfb25d14.mockapi.io/category_doctor").then((result) =>
+      setCard(result.data)
     );
   }, []);
 
   const handleCategoryClick = (categoryId, category) => {
-    // Store the selected category in local storage
-    localStorage.setItem(
-      "selectedCategory",
-      JSON.stringify({ id: categoryId, name: category })
-    );
+    localStorage.setItem("selectedCategory", JSON.stringify({ id: categoryId, name: category }));
   };
 
   return (
@@ -57,26 +53,16 @@ function CardCategory() {
           data-aos-duration="1000"
         >
           <Link
-            to={`/paymentdoctor`}
-            key={item.id}
-            fluid="true"
+            to="/paymentdoctor" // ❌ Salah: /paymentdoctor harus dalam string
             onClick={() => handleCategoryClick(item.id, item.category)}
           >
-            <div>
-              <Card className="card" id="card">
-                <div id="gradient-bg"></div>
-                <Card.Img
-                  src={item.image}
-                  id="card-category-image"
-                  className=""
-                />
-              </Card>
-            </div>
+            <Card className="card" id="card">
+              <div id="gradient-bg"></div>
+              <Card.Img src={item.image} id="card-category-image" />
+            </Card>
           </Link>
         </Col>
       ))}
-
-    
     </>
   );
 }
