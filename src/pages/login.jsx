@@ -24,33 +24,44 @@ function Login() {
     if (!email || !password) {
       return Swal.fire("Error", "Email dan password harus diisi", "error");
     }
+    if (email === "admin@gmail.com" && password === "admin") {
+      const adminData = {
+        email: "admin",
+        name: "Admin",
+        id: "admin123",
+        img: "https://example.com/admin-image.png", // Ganti dengan URL gambar admin yang sesuai
+      };
+      const adminDataJson = JSON.stringify(adminData);
+      localStorage.setItem("idUser", adminDataJson);
+      return navigate("/admin");
+    } else {
+      let res = await axios.get("https://64e224b4ab0037358818bf67.mockapi.io/users");
+      let data = await res.data;
 
-    let res = await axios.get("https://64e224b4ab0037358818bf67.mockapi.io/users");
-    let data = await res.data;
-
-    const ambilData = () => {
-      const result = [];
-      for (let i = 0; i < data.length; i++) {
-        if (data[i].email === email && data[i].password === password) {
-          result.push(data[i]);
+      const ambilData = () => {
+        const result = [];
+        for (let i = 0; i < data.length; i++) {
+          if (data[i].email === email && data[i].password === password) {
+            result.push(data[i]);
+          }
         }
-      }
 
-      if (result.length < 1) {
-        Swal.fire("Error", "Email atau password salah", "error");
-      } else {
-        const loginData = {
-          email: result[0].email,
-          name: result[0].name,
-          id: result[0].id,
-          img: result[0].image,
-        };
-        const loginDataJson = JSON.stringify(loginData);
-        localStorage.setItem("idUser", loginDataJson);
-        navigate("/");
-      }
-    };
-    ambilData();
+        if (result.length < 1) {
+          Swal.fire("Error", "Email atau password salah", "error");
+        } else {
+          const loginData = {
+            email: result[0].email,
+            name: result[0].name,
+            id: result[0].id,
+            img: result[0].image,
+          };
+          const loginDataJson = JSON.stringify(loginData);
+          localStorage.setItem("idUser", loginDataJson);
+          navigate("/");
+        }
+      };
+      ambilData();
+    }
   };
 
   return (
@@ -106,4 +117,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Login;
