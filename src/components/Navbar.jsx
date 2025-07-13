@@ -17,7 +17,7 @@ function BasicExample() {
 
   const handleChat = () => {
     if (isLoggedIn) {
-      window.open(`https://klinik-orinda-chat-layering.vercel.app/${isLoggedIn.name}`, "_blank");
+      window.open(`https://klinik-or-git-f0e74c-fadlli-muhammad-maulanis-projects-f7f6aa4d.vercel.app/${isLoggedIn.name}`, "_blank");
     } else {
       Swal.fire(
         {
