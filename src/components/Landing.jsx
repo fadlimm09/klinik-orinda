@@ -157,8 +157,7 @@ const Landing = () => {
               <div className="desc">
                 <h2>Visi Klinik Pratama Orinda </h2>
                 <h5>
-                  Menjadi Klinik Pratama dengan Pelayanan Paripurna di Kecamatan
-                  Cipayung Jakarta Timur 2023
+                  Menjadi Klinik Pratama dengan Pelayanan Paripurna di Kec. Kadugede, Kabupaten Kuningan, Jawa Barat 
                 </h5>
                 <p>
                   Untuk mencapai visi tersebut, Klinik Pratama Orinda
