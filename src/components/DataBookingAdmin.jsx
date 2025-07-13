@@ -13,7 +13,7 @@ function DataBookingAdmin() {
 
   const fetchData = () => {
     axios
-      .get("https://64de412c825d19d9bfb25d14.mockapi.io/bookingPasien")
+      .get("https://686fbba191e85fac42a24ef2.mockapi.io/BookingPasien/Booking_pasien")
       .then((response) => {
         setDataBooking(response.data);
       })
@@ -26,7 +26,7 @@ function DataBookingAdmin() {
     try {
       for (const item of dataBooking) {
         await axios
-          .delete(`https://64de412c825d19d9bfb25d14.mockapi.io/bookingPasien/${item.nomer_antrian}`)
+          .delete(`https://686fbba191e85fac42a24ef2.mockapi.io/BookingPasien/Booking_pasien/${item.nomer_antrian}`)
 
           .then((response) => {
             console.log(`Deleted item with id ${item.nomer_antrian}`);
@@ -44,7 +44,7 @@ function DataBookingAdmin() {
 
   const handleDeleteByKey = async (key, userName) => {
     try {
-      await axios.delete(`https://64de412c825d19d9bfb25d14.mockapi.io/bookingPasien/${key}`);
+      await axios.delete(`https://686fbba191e85fac42a24ef2.mockapi.io/BookingPasien/Booking_pasien/${key}`);
       Swal.fire(`Pasien ke ${key} yang bernama ${userName} sudah selesai konsultasi`, "", "success");
       fetchData();
       QueryClient.invalidateQueries({ queryKey: ["book"] });

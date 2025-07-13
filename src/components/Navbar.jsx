@@ -17,7 +17,7 @@ function BasicExample() {
 
   const handleChat = () => {
     if (isLoggedIn) {
-      window.open(`https://vercel.com/fadlli-muhammad-maulanis-projects-f7f6aa4d/klinik-orinda-layering-chat-byl7/AP46Ea8C3mrsqKNrsTRdDJsZEfai/${isLoggedIn.name}`, "_blank");
+      window.open(`https://klinik-orinda-layering-chat-xkgn.vercel.app/${isLoggedIn.name}`, "_blank");
     } else {
       Swal.fire(
         {

@@ -33,7 +33,7 @@ function CardCategory() {
   }, []);
 
   useEffect(() => {
-    axios("https://64de412c825d19d9bfb25d14.mockapi.io/category_doctor").then(
+    axios("https://686fbba191e85fac42a24ef2.mockapi.io/BookingPasien/Booking_pasien").then(
       (result) => setCard(result.data)
     );
   }, []);

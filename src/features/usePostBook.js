@@ -8,7 +8,7 @@ const useCreateBook = () => {
   const mutation = useMutation({
     mutationFn: async (json) => {
       // <<< tambahkan 'json' di sini
-      const response = await axios.post("https://64de412c825d19d9bfb25d14.mockapi.io/bookingPasien", json);
+      const response = await axios.post("https://686fbba191e85fac42a24ef2.mockapi.io/BookingPasien/Booking_pasien", json);
       return response.data;
     },
     onSuccess: () => {

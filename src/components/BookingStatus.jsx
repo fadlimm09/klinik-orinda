@@ -15,7 +15,7 @@ function BookingStatus() {
         const userId = JSON.parse(getStorageUser);
 
         const response = await fetch(
-          `https://64de412c825d19d9bfb25d14.mockapi.io/bookingPasien?user_id=${userId.id}`
+          `https://686fbba191e85fac42a24ef2.mockapi.io/BookingPasien/Booking_pasien?user_id=${userId.id}`
         );
 
         if (!response.ok) {

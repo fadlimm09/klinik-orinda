@@ -20,7 +20,7 @@ function Register() {
       return Swal.fire("Error", "Mohon lengkapi semua kolom", "error");
     }
 
-    let res = await axios.get("https://64e224b4ab0037358818bf67.mockapi.io/users");
+    let res = await axios.get("https://686fbba191e85fac42a24ef2.mockapi.io/BookingPasien/users");
     let data = await res.data;
 
     const ambilData = async () => {
@@ -35,7 +35,7 @@ function Register() {
 
       if (result.length === 0) {
         axios
-          .post("https://64e224b4ab0037358818bf67.mockapi.io/users", {
+          .post("https://686fbba191e85fac42a24ef2.mockapi.io/BookingPasien/users", {
             name: name,
             email: email,
             password: password,

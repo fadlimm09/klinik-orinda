@@ -19,9 +19,9 @@ function AdminPage() {
         <h2>Admin Page</h2>
         <p>Halaman ini adalah halaman admin. Disini admin bisa melakukan penghapusan, dan perubahan data.</p>
         <div className="d-flex gap-3 ">
-          <Button href="https://klinik-orinda-chat-layering.vercel.app/chatdoctor/dokterAgah">Chat Dokter Agah </Button>
-          <Button href="https://klinik-orinda-chat-layering.vercel.app/chatdoctor/dokterDesy">Chat Dokter Desy</Button>
-          <Button href="https://klinik-orinda-chat-layering.vercel.app/chatdoctor/dokterOno">Chat Dokter Ono</Button>
+          <Button href="https://klinik-orinda-layering-chat-xkgn.vercel.app//chatdoctor/dokterAgah">Chat Dokter Agah </Button>
+          <Button href="https://klinik-orinda-layering-chat-xkgn.vercel.app//chatdoctor/dokterDesy">Chat Dokter Desy</Button>
+          <Button href="https://klinik-orinda-layering-chat-xkgn.vercel.app//chatdoctor/dokterOno">Chat Dokter Ono</Button>
         </div>
         <div className="d-flex gap-3">
           <Button onClick={() => handleButtonClick("DataBooking")}>Data Booking</Button>

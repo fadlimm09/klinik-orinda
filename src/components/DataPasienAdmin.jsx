@@ -8,7 +8,7 @@ function DataBookingAdmin() {
   const [dataBooking, setDataBooking] = useState([]);
 
   useEffect(() => {
-    axios("https://64e224b4ab0037358818bf67.mockapi.io/users").then((result) =>
+    axios("https://686fbba191e85fac42a24ef2.mockapi.io/BookingPasien/users").then((result) =>
       setDataBooking(result.data)
     );
   }, []);
