@@ -36,8 +36,7 @@ const Landing = () => {
               di Orinda !
             </h1>
             <p className="text-white my-4">
-              Klinik Pratama dengan Pelayanan Paripurna di Kecamatan Cipayung,
-              Jakarta Timur
+              Jl. Raya Kuningan Ciamis, Kadugede, Kec. Kadugede, Kabupaten Kuningan, Jawa Barat 45561
             </p>
             <Link
               to={"/consult/category"}
